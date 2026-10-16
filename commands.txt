@@ -1,5 +1,5 @@
 ifconfig > ifconfig.txt
-ifconfig | grep "inet " > ifconfig_v4.txt
+grep "inet " ifconfig.txt > ifconfig_v4.txt
 grep -oP "([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*)" ifconfig_v4.txt > ip.txt
 sort ip.txt -n
 ifconfig | grep "inet " | grep -oP "([0-9]*\.[0-9]*\.[0-9]*\.[0-9]*)" | sort -n > sorted_ip.txt
